@@ -58,7 +58,7 @@ body.demos .service-widget {
 }
 
 body.demos .container-fluid {
-    max-width: 1080px
+    max-width: 1080px;
 }
 
 a {
@@ -182,7 +182,7 @@ ul, li, ol{
 -------------------------------------------------------------------*/
 
 .first {
-    clear: both
+    clear: both;
 }
 
 .last {
@@ -304,7 +304,9 @@ a img.aligncenter {
 -------------------------------------------------------------------*/
 
 .navbar-dark{
-	
+    position: relative; /* or keep fixed if using fixed-top */
+    z-index: 1002;      /* above the hero overlay (which uses z-index:1) */
+    background: rgba(10,14,25,0.6);
 }
 
 .navbar-dark .navbar-nav .nav-link{
@@ -2614,3 +2616,302 @@ select.mobile-device {
 .navbar-nav .nav-link:hover {
     transform: scale(1.1) rotate(-2deg);
 }
+.filter-button-group button {
+    padding: 10px 18px;
+    border: none;
+    background: #eee;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.filter-button-group button:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   GLOBAL DARK COSMIC THEME
+   Inspired by your uploaded image
+   ============================================ */
+
+body {
+    background: #070b14 !important;
+    color: #d6d7e0 !important;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Universal Text Color */
+*, h1, h2, h3, h4, h5, h6, p, span, li {
+    color: #e6e7f0 !important;
+}
+
+/* ============================================
+   BACKGROUND SECTIONS
+   ============================================ */
+
+
+/* Dark gradient overlay to match the theme */
+.section::after,
+#home::after,
+.wb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(4, 7, 15, 0.9) 0%,
+        rgba(5, 10, 20, 0.85) 45%,
+        rgba(3, 5, 12, 0.95) 100%
+    );
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+/* Make content appear above overlay */
+.section > *, #home > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+#mainNav {
+    background: rgba(10, 14, 25, 0.7) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(120, 140, 255, 0.15);
+}
+
+#mainNav .nav-link {
+    color: #dcdcff !important;
+    transition: 0.3s ease;
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+    color: #9bb4ff !important;
+    text-shadow: 0 0 8px #7d8eff;
+}
+
+/* ============================================
+   HEADINGS
+   ============================================ */
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #f2f5ff !important;
+    text-shadow: 0 0 12px rgba(150, 170, 255, 0.5),
+                 0 0 25px rgba(90, 110, 255, 0.3);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+button, .sim-btn span, .sim-btn {
+    background: linear-gradient(135deg, #1f2740, #2c375a) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(130, 150, 255, 0.4) !important;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.3s ease;
+}
+
+button:hover, .sim-btn:hover {
+    background: linear-gradient(135deg, #3d4e8a, #24305e) !important;
+    box-shadow: 0 0 18px rgba(110, 130, 255, 0.6),
+                0 0 30px rgba(90, 110, 255, 0.4);
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* ============================================
+   CARDS / BOXES / CONTAINERS
+   ============================================ */
+
+.services-inner-box,
+.gallery-single,
+.testimonial,
+.contact-info,
+.contact_form,
+.pricing-table {
+    background: rgba(15, 18, 30, 0.65) !important;
+    border: 1px solid rgba(120, 130, 180, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+.services-inner-box:hover,
+.gallery-single:hover,
+.testimonial:hover,
+.pricing-table:hover {
+    box-shadow: 0 0 20px rgba(125, 150, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+/* ============================================
+   GALLERY HOVER
+   ============================================ */
+
+.gallery-single .img-overlay {
+    background: rgba(160, 180, 255, 0.15) !important;
+    backdrop-filter: blur(4px);
+    transition: 0.3s ease;
+}
+
+.gallery-single:hover .img-overlay {
+    background: rgba(160, 180, 255, 0.25) !important;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+.form-control {
+    background: rgba(10, 12, 20, 0.8) !important;
+    border: 1px solid rgba(150, 160, 200, 0.25) !important;
+    color: #fff !important;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: #9fb1ff !important;
+    box-shadow: 0 0 10px rgba(140, 160, 255, 0.4);
+}
+
+.form-control::placeholder {
+    color: #8086a0 !important;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer-distributed {
+    background: #05070d !important;
+    border-top: 1px solid #1a2033;
+}
+
+.footer-links a {
+    color: #b8b9cc !important;
+}
+
+.footer-company-name {
+    color: #6d7080 !important;
+}
+
+/* ============================================
+   STAR GLOW ACCENTS (SUBTLE)
+   ============================================ */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('uploads/banner-01.jpg') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: -3;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(115, 130, 255, 0.15), transparent 50%);
+    pointer-events: none;
+    z-index: -2;
+}
+/* HOME SECTION SKY BACKGROUND */
+#home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;               /* make hero full viewport height */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 20px;             /* space for fixed navbar */
+    /* ensure this rule is not overridden later; if it is, move/duplicate near file end */
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    inset: 0;                         /* top:0; right:0; bottom:0; left:0; */
+    background: rgba(0,0,0,0.35);     /* overlay darkness — reduce if it hides text */
+    z-index: 1;                       /* overlay behind heading */
+    pointer-events: none;
+}
+
+/* make sure heading appears above overlay */
+.heading {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #ffffff;                   /* explicit text color */
+}
+
+/* ensure h1 is visible and sized where you want it */
+.heading h1 {
+    font-size: 62px;                  /* change to preferred size */
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: inherit;
+}
+
+/* in case another overlay selector exists, override it (use cautiously) */
+.main-banner::after,
+#home .overlay,
+#home::after {
+    /* if an extra overlay is hiding content, reduce its opacity or disable it */
+    opacity: 0.35 !important;
+    z-index: 1 !important;
+}
+.contact-box {
+    background: #0f141d;   /* or your preferred color */
+    padding: 20px;
+    border-radius: 10px;
+    width: fit-content; /* keeps the box around the content */
+    display: inline-block; /* makes the box wrap the content */
+}
+
+.social-links {
+    margin-top: 10px;
+    white-space: nowrap; /* prevents wrapping outside the box */
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+#mainNav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 12001; /* above overlays and preloader (preloader is 11000) */
+    backdrop-filter: blur(8px);
+}
+
+/* Prevent page content hiding under fixed navbar — set to actual navbar height */
+body {
+    padding-top: 70px; /* change 70px to your navbar's height */
+}
+
